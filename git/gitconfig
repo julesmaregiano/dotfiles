@@ -1,0 +1,25 @@
+[user]
+	name = Jules Maregiano
+	# GitHub "noreply" address: links commits to your account without publishing your email
+	email = 29142979+julesmaregiano@users.noreply.github.com
+
+[init]
+	defaultBranch = main
+
+[push]
+	# `git push` on a new branch just works (no more --set-upstream)
+	autoSetupRemote = true
+
+[pull]
+	rebase = false
+
+[fetch]
+	# Forget remote branches that were deleted on GitHub
+	prune = true
+
+[credential "https://git.heroku.com"]
+	helper = !heroku git:credentials
+
+# Per-machine overrides (e.g. a work email) — not tracked
+[include]
+	path = ~/.gitconfig.local

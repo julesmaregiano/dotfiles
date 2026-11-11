@@ -1,0 +1,15 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    "explorer.confirmDragAndDrop": false,
+    "workbench.colorTheme": "Spinel",
+    "emmet.includeLanguages": {
+        "erb": "html",
+        "ruby": "html"
+    },
+    "solargraph.diagnostics": true,
+    "solargraph.hover": true,
+    "solargraph.completion": true,
+    "editor.minimap.enabled": false,
+    "editor.foldingStrategy": "indentation",
+    "window.autoDetectColorScheme": false
+}

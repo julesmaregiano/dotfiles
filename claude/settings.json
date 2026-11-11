@@ -1,0 +1,9 @@
+{
+  "enabledPlugins": {
+    "ruby-lsp@claude-plugins-official": true
+  },
+  "alwaysThinkingEnabled": false,
+  "tui": "fullscreen",
+  "theme": "light",
+  "agentPushNotifEnabled": true
+}

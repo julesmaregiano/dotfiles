@@ -1,0 +1,14 @@
+# Global gitignore (~/.config/git/ignore) — applies to every repo
+
+# macOS
+.DS_Store
+
+# Secrets — never commit these anywhere
+.env
+.env.*
+!.env.example
+config/master.key
+config/credentials/*.key
+
+# Personal tool settings
+**/.claude/settings.local.json

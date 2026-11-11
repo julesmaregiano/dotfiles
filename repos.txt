@@ -1,0 +1,9 @@
+# Projects cloned into ~/code by bootstrap.sh
+# folder        github repo                     heroku app (- if none)
+diary           julesmaregiano/diary            julesd
+guide-18        julesmaregiano/guide-18         -
+parsion         julesmaregiano/parsion          parsion
+pricery         julesmaregiano/pricery.io       -
+restoleads      julesmaregiano/restoleads       restoleads
+save2ai         julesmaregiano/save2ai          save2ai-prod
+shipup          julesmaregiano/shipup-scripts   -
