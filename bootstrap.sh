@@ -25,7 +25,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 step "Brewfile (dev tools)"
 brew bundle --file="$DOTFILES/Brewfile"
 
-read -rp "Also install personal apps from Brewfile.apps (Slack, Spotify, Steam…)? [y/N] " ans
+read -rp "Also install personal apps from Brewfile.apps (Notion, Obsidian, Spotify…)? [y/N] " ans
 [[ "$ans" =~ ^[Yy]$ ]] && brew bundle --file="$DOTFILES/Brewfile.apps"
 
 # 4. Oh My Zsh
@@ -52,24 +52,8 @@ link git/ignore            "$HOME/.config/git/ignore"
 link gh/config.yml         "$HOME/.config/gh/config.yml"
 link claude/settings.json  "$HOME/.claude/settings.json"
 link vscode/settings.json  "$APP/Code/User/settings.json"
-link cursor/settings.json  "$APP/Cursor/User/settings.json"
-link cursor/keybindings.json "$APP/Cursor/User/keybindings.json"
 
-# 6. Cursor extensions (VS Code ones come from the Brewfile)
-step "Cursor extensions"
-if command -v cursor >/dev/null 2>&1; then
-  installed="$(cursor --list-extensions 2>/dev/null || true)"
-  while read -r ext; do
-    [[ -z "$ext" ]] && continue
-    if ! grep -qix "$ext" <<<"$installed"; then
-      cursor --install-extension "$ext" </dev/null >/dev/null && echo "  installed $ext"
-    fi
-  done < "$DOTFILES/cursor/extensions.txt"
-else
-  echo "  'cursor' command not found — open Cursor once, run 'Install cursor command', then re-run."
-fi
-
-# 7. SSH key + GitHub login (gh offers to upload the key)
+# 6. SSH key + GitHub login (gh offers to upload the key)
 step "SSH key & GitHub"
 if [[ ! -f "$HOME/.ssh/id_ed25519" ]]; then
   ssh-keygen -t ed25519 -C "$(whoami)@$(scutil --get LocalHostName)" -f "$HOME/.ssh/id_ed25519"
@@ -86,7 +70,7 @@ if ! gh auth status >/dev/null 2>&1; then
   gh auth login --hostname github.com --git-protocol ssh --web
 fi
 
-# 8. Clone projects
+# 7. Clone projects
 step "Cloning projects into $CODE"
 mkdir -p "$CODE"
 grep -vE '^\s*(#|$)' "$DOTFILES/repos.txt" | while read -r dir repo heroku_app; do
@@ -100,7 +84,7 @@ grep -vE '^\s*(#|$)' "$DOTFILES/repos.txt" | while read -r dir repo heroku_app; 
   fi
 done
 
-# 9. Ruby versions each project asks for
+# 8. Ruby versions each project asks for
 step "Ruby versions"
 eval "$(rbenv init - bash)"
 for f in "$CODE"/*/.ruby-version; do

@@ -26,7 +26,6 @@ Then restore your secrets (below), run `heroku login`, and `bundle install && bi
 | `gh/config.yml` | `~/.config/gh/config.yml` |
 | `claude/settings.json` | `~/.claude/settings.json` |
 | `vscode/settings.json` | VS Code user settings |
-| `cursor/*` | Cursor settings, keybindings, extensions |
 | `Brewfile` / `Brewfile.apps` | Dev tools / personal apps (`brew bundle`) |
 | `repos.txt` | Projects to clone |
 
@@ -41,7 +40,7 @@ Files are **symlinked**, so editing `~/.zshrc` edits this repo, so commit the ch
 ## Secrets: never in this repo (it's public)
 
 Put machine-only values in `~/.zshrc.local` or `~/.gitconfig.local` (both untracked).
-Store these in 1Password / an encrypted backup and restore them by hand:
+Store these in an encrypted backup and restore them by hand:
 
 - Rails keys: `config/master.key`, `config/credentials/*.key` (diary, restoleads)
 - `.env` files: parsion/backend, save2ai/backend, shipup/*

@@ -2,31 +2,15 @@
 # Not available via Homebrew, install manually: Microsoft Office, SpotiFLAC, Microsoft Defender
 
 # --- Work & communication
-cask "slack"
 cask "notion"
 cask "notion-calendar"
 cask "obsidian"
-cask "telegram"
 cask "discord"
-cask "descript"
 cask "nordvpn"
-cask "activitywatch"
 
-# --- Media & creative
+# --- Media
 cask "spotify"
 cask "vlc"
-cask "obs"
-cask "kdenlive"
-cask "lmms"
-cask "focusrite-control"
-
-# --- Games
-cask "steam"
-cask "epic-games"
-cask "nvidia-geforce-now"
-cask "minecraft"
 
 # --- Utilities
-cask "grandperspective"
-brew "displayplacer"
 brew "rtorrent"

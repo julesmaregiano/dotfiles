@@ -24,9 +24,6 @@ eval "$(rbenv init - zsh)"
 # User binaries (Claude Code native install, pipx, etc.)
 export PATH="$HOME/.local/bin:$PATH"
 
-# Optional tools
-[[ -f ~/.openclaw/completions/openclaw.zsh ]] && source ~/.openclaw/completions/openclaw.zsh
-
 # Untracked, per-machine overrides (tokens, experiments…)
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
